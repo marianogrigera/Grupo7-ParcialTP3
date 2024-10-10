@@ -1,5 +1,6 @@
 package com.example.grupo7_parcialtp3.ui.theme.capas.inicio
 
+import MainActivity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -21,7 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.Modifier
-import com.example.grupo7_parcialtp3.MainActivity
 import com.example.grupo7_parcialtp3.R
 
 class SplashScreen : ComponentActivity() {
