@@ -3,12 +3,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.grupo7_parcialtp3.ui.theme.capas.inicio.SignInScreen // Asegúrate de importar la clase SignIn
+import androidx.navigation.compose.rememberNavController
+import com.example.grupo7_parcialtp3.ui.theme.capas.inicio.SignIn
+import com.example.grupo7_parcialtp3.ui.theme.capas.inicio.SplashScreen
+import com.example.grupo7_parcialtp3.ui.theme.capas.signup.SignUp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,12 +17,16 @@ class MainActivity : ComponentActivity() {
             MaterialTheme {
                 Surface {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "welcome") {
-                        composable("welcome") { WelcomeScreen(navController) } // Pantalla de bienvenida
-                        composable("signin") { SignInScreen() } // Pantalla de inicio de sesión
+                    NavHost(navController = navController, startDestination = "splash") {
+                        composable("splash") { SplashScreen() }
+                        composable("welcome") { WelcomeScreen(navController) }
+                        composable("signin") { SignIn() }
+                        composable("signup") { SignUp() }
+                        composable("onboarding") { Onboarding() }
                     }
                 }
             }
         }
     }
 }
+
