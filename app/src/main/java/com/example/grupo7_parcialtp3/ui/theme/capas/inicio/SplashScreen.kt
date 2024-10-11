@@ -1,6 +1,6 @@
 package com.example.grupo7_parcialtp3.ui.theme.capas.inicio
 
-import MainActivity
+import Onboarding
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -34,7 +34,7 @@ class SplashScreen : ComponentActivity() {
         }
 
         Handler().postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Onboarding::class.java)
             startActivity(intent)
             finish()
         }, 2000) // Espera 2 segundos
@@ -72,4 +72,5 @@ fun SplashScreenContent() {
 fun PreviewSplashScreen() {
     SplashScreenContent()
 }
+
 
