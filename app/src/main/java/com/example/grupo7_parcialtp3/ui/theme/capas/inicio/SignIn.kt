@@ -3,11 +3,11 @@ package com.example.grupo7_parcialtp3.ui.theme.capas.inicio
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.* // Para el espaciado
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.* // Para los controles UI
-import androidx.compose.runtime.* // Para estado mutable
-import androidx.compose.ui.Alignment // Para alinear los elementos
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
@@ -73,9 +73,9 @@ fun SignInScreen() {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-           
+
             Button(
-                onClick = { /* Lógica de inicio de sesión aquí */ },
+                onClick = { /* Laburen!! */ },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(text = "Iniciar sesión", fontSize = 18.sp)

@@ -8,7 +8,7 @@ import androidx.compose.runtime.remember
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.grupo7_parcialtp3.ui.theme.capas.inicio.SignInScreen // Asegúrate de importar la clase SignIn
+import com.example.grupo7_parcialtp3.ui.theme.capas.inicio.SignInScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +18,8 @@ class MainActivity : ComponentActivity() {
                 Surface {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "welcome") {
-                        composable("welcome") { WelcomeScreen(navController) } // Pantalla de bienvenida
-                        composable("signin") { SignInScreen() } // Pantalla de inicio de sesión
+                        composable("welcome") { WelcomeScreen(navController) }
+                        composable("signin") { SignInScreen() }
                     }
                 }
             }
