@@ -200,4 +200,3 @@ fun PreviewSignUpScreen() {
     val navController = rememberNavController()
     SignUpScreen(navController)
 }
-
