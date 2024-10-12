@@ -78,7 +78,7 @@ fun SelectLocationScreen() {
             Spacer(modifier = Modifier.height(24.dp))
 
             Text(text = "Your zone", fontWeight = FontWeight.Bold)
-            ExposedDropdownMenuBox(expanded = expandedZone, onExpandedChange = { expandedZone = it }) {
+            /* ExposedDropdownMenuBox(expanded = expandedZone, onExpandedChange = { expandedZone = it }) {
                 TextField(
                     readOnly = true,
                     value = selectedZone,
@@ -96,11 +96,11 @@ fun SelectLocationScreen() {
                             selectedZone = zone
                             expandedZone = false
                         }) {
-                            Text(zone)
+                            Text(text = zone) // Asegúrate de que 'zone' sea un String
                         }
                     }
                 }
-            }
+            } */
 
             Spacer(modifier = Modifier.height(16.dp))
 
