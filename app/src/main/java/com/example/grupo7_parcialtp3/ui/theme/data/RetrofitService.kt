@@ -34,8 +34,11 @@ object RetrofitServiceFactory{
     @GET("products")
     suspend fun getAllProducts(): List<Products>
 
-    @GET("products/{id}")
-    suspend fun getOneProduct(@Path("id") id: Int, @Body product: Product): Product
+    @GET(value = "products/{id}")
+    public abstract suspend fun getOneProduct(
+        @Path(value = "id") id: Int,
+        @Body product: Product
+    ): Product
 
     /*@POST("products")
     suspend fun createProduct(@Body product: Product): Product
