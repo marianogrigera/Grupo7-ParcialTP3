@@ -34,10 +34,10 @@ object RetrofitServiceFactory{
     @GET("products")
     suspend fun getAllProducts(): List<Products>
 
-    @GET("products/1")
-    suspend fun getOneProduct(): Product
+    @GET("products/{id}")
+    suspend fun getOneProduct(@Path("id") id: Int, @Body product: Product): Product
 
-    @POST("products")
+    /*@POST("products")
     suspend fun createProduct(@Body product: Product): Product
 
     @PUT("products/{id}")
@@ -47,7 +47,7 @@ object RetrofitServiceFactory{
     suspend fun patchProduct(@Path("id") id: Int, @Body product: Product): Product
 
     //@DELETE("products/{id}")
-    //suspend fun deleteProduct(@Path("id") id: Int): Response<Unit>
+    //suspend fun deleteProduct(@Path("id") id: Int): Response<Unit>*/
 
     // Servicios para Carts (Carritos)
     @GET("carts")
@@ -62,6 +62,8 @@ object RetrofitServiceFactory{
     @PUT("carts/{id}")
     suspend fun updateCart(@Path("id") id: Int, @Body cart: Carts): Carts
 
+    //service de eliminar producto de carrito
+
     //@DELETE("carts/{id}")
     //suspend fun deleteCart(@Path("id") id: Int): Response<Unit>
 
@@ -69,7 +71,7 @@ object RetrofitServiceFactory{
     //@POST("auth/login")
     //suspend fun login(@Body loginRequest: LoginRequest): Response<LoginResponse>
 
-    // Servicios para Users (Usuarios) - en proceso
+    // Servicios para Users (Usuarios)
     /*
     @GET("users")
     suspend fun getAllUsers(): List<Users>
