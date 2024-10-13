@@ -31,7 +31,7 @@ class ExploreScreen : ComponentActivity() {
 
 @Composable
 fun ExploreScreenContent() {
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -52,7 +52,7 @@ fun ExploreScreenContent() {
                 contentDescription = null,
                 modifier = Modifier
                     .align(Alignment.TopStart)
-                    .padding(start = 16.dp, top = 16.dp)
+                    .padding(start = 20.dp, top = 23.dp)
             )
         }
 
@@ -60,8 +60,7 @@ fun ExploreScreenContent() {
             modifier = Modifier
                 .fillMaxWidth()
                 .background(Color(0xFFF2F3F2))
-                .padding(horizontal = 16.dp, vertical = 8.dp)
-                .padding(top = 8.dp)
+                .padding(vertical = 8.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -89,15 +88,15 @@ fun ExploreScreenContent() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Primera fila
         Row(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-
             Box(
                 modifier = Modifier
-                    .weight(1f)
-                    .padding(end = 8.dp)
+                    .padding(end = 4.dp) // Menos espacio entre las cajas
+                    .size(150.dp, 150.dp)
                     .background(Color(0x1A53B175), RoundedCornerShape(12.dp))
                     .border(2.dp, Color(0xFF53B175), RoundedCornerShape(12.dp))
                     .padding(16.dp)
@@ -109,17 +108,17 @@ fun ExploreScreenContent() {
                     Image(
                         painter = painterResource(id = R.drawable.ic_fruits),
                         contentDescription = null,
-                        modifier = Modifier.size(100.dp)
+                        modifier = Modifier.size(80.dp)
                     )
-                    Text(text = "Product 1", fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp))
+                    Text(text = "Frash Fruits\n" +
+                            "& Vegetable", fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp))
                 }
             }
 
-
             Box(
                 modifier = Modifier
-                    .weight(1f)
-                    .padding(start = 8.dp)
+                    .padding(start = 4.dp) // Menos espacio entre las cajas
+                    .size(150.dp, 150.dp)
                     .background(Color(0x1AF8A44C), RoundedCornerShape(12.dp))
                     .border(2.dp, Color(0xFFF8A44C), RoundedCornerShape(12.dp))
                     .padding(16.dp)
@@ -131,9 +130,110 @@ fun ExploreScreenContent() {
                     Image(
                         painter = painterResource(id = R.drawable.ic_oil),
                         contentDescription = null,
-                        modifier = Modifier.size(100.dp)
+                        modifier = Modifier.size(80.dp)
                     )
-                    Text(text = "Product 2", fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp))
+                    Text(text = "Cooking Oil\n" +
+                            "& Ghee", fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp))
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Segunda fila
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Box(
+                modifier = Modifier
+                    .padding(end = 4.dp) // Menos espacio entre las cajas
+                    .size(150.dp, 150.dp)
+                    .background(Color(0x1AF7A593), RoundedCornerShape(12.dp))
+                    .border(2.dp, Color(0xFFD67A7F), RoundedCornerShape(12.dp))
+                    .padding(16.dp)
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_meat),
+                        contentDescription = null,
+                        modifier = Modifier.size(80.dp)
+                    )
+                    Text(text = "Meat & Fish", fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp))
+                }
+            }
+
+            Box(
+                modifier = Modifier
+                    .padding(start = 4.dp) // Menos espacio entre las cajas
+                    .size(150.dp, 150.dp)
+                    .background(Color(0x1AD3B0E0), RoundedCornerShape(12.dp))
+                    .border(2.dp, Color(0xFFC69CC1), RoundedCornerShape(12.dp))
+                    .padding(16.dp)
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_bakery),
+                        contentDescription = null,
+                        modifier = Modifier.size(80.dp)
+                    )
+                    Text(text = "Bakery & Snacks", fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp))
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Tercera fila
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Box(
+                modifier = Modifier
+                    .padding(end = 4.dp) // Menos espacio entre las cajas
+                    .size(150.dp, 150.dp)
+                    .background(Color(0x1AFDE598), RoundedCornerShape(12.dp))
+                    .border(2.dp, Color(0xFFE1C200), RoundedCornerShape(12.dp))
+                    .padding(16.dp)
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_eggs),
+                        contentDescription = null,
+                        modifier = Modifier.size(80.dp)
+                    )
+                    Text(text = "Dairy & Eggs", fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp))
+                }
+            }
+
+            Box(
+                modifier = Modifier
+                    .padding(start = 4.dp) // Menos espacio entre las cajas
+                    .size(150.dp, 150.dp)
+                    .background(Color(0x1AB7DFF5), RoundedCornerShape(12.dp))
+                    .border(2.dp, Color(0xFF9BCFE3), RoundedCornerShape(12.dp))
+                    .padding(16.dp)
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_beverages),
+                        contentDescription = null,
+                        modifier = Modifier.size(80.dp)
+                    )
+                    Text(text = "Beverages", fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp))
                 }
             }
         }
@@ -145,4 +245,3 @@ fun ExploreScreenContent() {
 fun PreviewExploreScreen() {
     ExploreScreenContent()
 }
-
