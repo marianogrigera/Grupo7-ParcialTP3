@@ -69,11 +69,11 @@ object RetrofitServiceFactory{
     //@POST("auth/login")
     //suspend fun login(@Body loginRequest: LoginRequest): Response<LoginResponse>
 
-    // Servicios para Users (Usuarios)
+    // Servicios para Users (Usuarios) - en proceso
+    /*
     @GET("users")
     suspend fun getAllUsers(): List<Users>
-    /*
-    En proceso
+
     @GET("users/{id}")
     suspend fun getOneUser(@Path("id") id: Int): User
 
@@ -85,5 +85,5 @@ object RetrofitServiceFactory{
 
     @DELETE("users/{id}")
     suspend fun deleteUser(@Path("id") id: Int): Response<Unit>
-    */
+     */
 }
