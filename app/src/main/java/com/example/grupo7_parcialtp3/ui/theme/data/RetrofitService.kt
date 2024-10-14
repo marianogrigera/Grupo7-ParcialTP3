@@ -71,8 +71,8 @@ object RetrofitServiceFactory{
     //suspend fun deleteCart(@Path("id") id: Int): Response<Unit>
 
     //servicio login:
-    //@POST("auth/login")
-    //suspend fun login(@Body loginRequest: LoginRequest): Response<LoginResponse>
+    @POST("auth/login")
+    suspend fun login(@Body loginRequest: LoginRequest): LoginResponse
 
     // Servicios para Users (Usuarios)
     /*
