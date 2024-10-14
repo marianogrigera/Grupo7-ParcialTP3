@@ -8,6 +8,7 @@ object AppDestinations {
     const val ONBOARDING_ROUTE = "onboarding"
     const val SIGNIN_ROUTE = "signin"
     const val SIGNUP_ROUTE = "signup"
+    const val HOME_ROUTE = "home"
 }
 
 class MainNavActions(
@@ -24,6 +25,10 @@ class MainNavActions(
 
     val navigateToSignUp: () -> Unit = {
         navController.navigate(AppDestinations.SIGNUP_ROUTE)
+    }
+
+    val navigateToHome: () -> Unit = {
+        navController.navigate(AppDestinations.HOME_ROUTE)
     }
 
 

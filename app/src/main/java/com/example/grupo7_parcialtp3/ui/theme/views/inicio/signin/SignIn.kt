@@ -85,7 +85,7 @@ fun SignInScreen(navController: NavController) {
 
            
             Button(
-                onClick = { /* Lógica de inicio de sesión aquí */ },
+                onClick = { navController.navigate("home") },
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF53B175))
             ) {

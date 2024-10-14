@@ -23,6 +23,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+
 @Composable
 fun MainContent(viewModel: MainActivityViewModel) {
     MaterialTheme {

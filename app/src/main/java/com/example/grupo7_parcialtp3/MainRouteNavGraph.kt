@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.grupo7_parcialtp3.navigation.HomeViewRoute
 import com.example.grupo7_parcialtp3.navigation.OnboardingRoute
 import com.example.grupo7_parcialtp3.navigation.SignInRoute
 import com.example.grupo7_parcialtp3.navigation.SignUpRoute
@@ -21,6 +22,7 @@ fun MainRouteNavGraph(
         composable(AppDestinations.ONBOARDING_ROUTE) { OnboardingRoute(navController) }
         composable(AppDestinations.SIGNIN_ROUTE) { SignInRoute(navController) }
         composable(AppDestinations.SIGNUP_ROUTE) { SignUpRoute(navController) }
+        composable(AppDestinations.HOME_ROUTE) { HomeViewRoute(navController) }
         // Agrega más rutas según sea necesario
     }
 }
