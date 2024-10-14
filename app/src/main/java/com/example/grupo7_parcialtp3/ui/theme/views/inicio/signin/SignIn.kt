@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.* // Para el espaciado
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.* // Para los controles UI
 import androidx.compose.runtime.* // Para estado mutable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment // Para alinear los elementos
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,16 +22,25 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.grupo7_parcialtp3.ui.theme.views.inicio.onboarding.WelcomeScreen
+import com.example.grupo7_parcialtp3.ui.theme.views.signin.SignInViewModel
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SignInScreen(navController: NavController) {
+fun SignInScreen(
+    navController: NavController,
+    authViewModel: SignInViewModel = viewModel()
+    ) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+
+    val loginResponse by authViewModel.loginResponse.observeAsState()
+    val loginError by authViewModel.loginError.observeAsState()
+
 
     val signUpText = buildAnnotatedString {
         append("Don't have an account? ")
@@ -40,6 +50,19 @@ fun SignInScreen(navController: NavController) {
             append("Sign Up")
         }
     }
+
+    loginResponse?.let {
+        navController.navigate("home")
+    }
+
+    loginError?.let {
+        Text(
+            text = it,
+            color = Color.Red,
+            modifier = Modifier.padding(8.dp)
+        )
+    }
+
 
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -85,7 +108,7 @@ fun SignInScreen(navController: NavController) {
 
            
             Button(
-                onClick = { navController.navigate("home") },
+                onClick = {authViewModel.login(email,password)},
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF53B175))
             ) {
