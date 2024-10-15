@@ -119,39 +119,6 @@ import kotlinx.coroutines.delay
         )
     }
 
-//    // Modularización del carrusel de banners de promoción
-//    @Composable
-//    fun PromotionBanner() {
-//        LazyRow(
-//            contentPadding = PaddingValues(horizontal = 16.dp),
-//            horizontalArrangement = Arrangement.spacedBy(16.dp)
-//        ) {
-//            items(listOf(R.drawable.ofertas_desplegable, R.drawable.appnuestra2, R.drawable.appnuestra2)) { imageRes ->
-//                Box(
-//                    modifier = Modifier
-//                        .width(300.dp)
-//                        .height(120.dp)
-//                        .background(Color(0xFFE0F7FA), shape = RoundedCornerShape(8.dp))
-//                ) {
-//                    Image(
-//                        painter = painterResource(id = imageRes),
-//                        contentDescription = "Fresh Vegetables",
-//                        modifier = Modifier.fillMaxSize(),
-//                        contentScale = ContentScale.Crop
-//                    )
-//                    Text(
-//                        text = "Fresh Vegetables\nGet Up To 40% OFF",
-//                        color = Color.White,
-//                        fontWeight = FontWeight.Bold,
-//                        modifier = Modifier
-//                            .align(Alignment.CenterStart)
-//                            .padding(16.dp)
-//                    )
-//                }
-//            }
-//        }
-//    }
-
     @Composable
     fun PromotionBanner() {
         // Lista de imágenes
@@ -220,37 +187,6 @@ import kotlinx.coroutines.delay
         }
     }
 
-    /*@Composable
-    fun () {
-        BottomAppBar(
-            modifier = Modifier.fillMaxWidth(),
-            contentColor = Color.Black,
-            containerColor = Color.White
-        ) {
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
-            ) {
-                IconButton(onClick = { /* Acción de ir a la pantalla de inicio */ }) {
-                    Icon(Icons.Default.Home, contentDescription = "Shop")
-                }
-                IconButton(onClick = { /* Acción de ir a la pantalla de inicio */ }) {
-                    Icon(Icons.Default.Search, contentDescription = "Explore")
-                }
-                IconButton(onClick = { /* Acción de ir a la pantalla de inicio */ }) {
-                    Icon(Icons.Default.ShoppingCart, contentDescription = "Cart")
-                }
-                IconButton(onClick = { /* Acción de ir a la pantalla de inicio */ }) {
-                    Icon(Icons.Default.FavoriteBorder, contentDescription = "Favourite")
-                }
-                IconButton(onClick = { /* Acción de ir a la pantalla de inicio */ }) {
-                    Icon(Icons.Default.AccountCircle, contentDescription = "Account")
-                }
-            }
-        }
-    }*/
 
     // Función para el encabezado de las secciones
     @Composable
