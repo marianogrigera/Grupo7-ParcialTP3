@@ -54,7 +54,6 @@ fun ProductDetailScreen(navController: NavController) {
             )
         }
         HorizontalDivider(thickness = 1.dp, color = Color(0xFFE2E2E2))
-        Spacer(modifier = Modifier.height(16.dp))
 
         AddToBasketButton()
     }
