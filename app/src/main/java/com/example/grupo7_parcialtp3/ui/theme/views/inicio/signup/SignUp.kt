@@ -1,8 +1,5 @@
 package com.example.grupo7_parcialtp3.ui.theme.capas.signup
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -23,6 +20,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
@@ -57,15 +55,16 @@ fun SignUpScreen(navController: NavController) {
                     contentDescription = null,
                     modifier = Modifier
                         .align(Alignment.Center)
-                        .size(100.dp)
+                        .size(width = 48.dp, height = 56.dp)
                 )
             }
 
-            Spacer(modifier = Modifier.height(40.dp))
+            Spacer(modifier = Modifier.height(30.dp))
 
             Text(
                 text = "Sign up",
                 fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(start = 16.dp)
             )
 
@@ -76,7 +75,7 @@ fun SignUpScreen(navController: NavController) {
                 modifier = Modifier.padding(start = 16.dp)
             )
 
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(30.dp))
 
             TextField(
                 value = email,
@@ -90,7 +89,7 @@ fun SignUpScreen(navController: NavController) {
                 )
             )
 
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(30.dp))
 
             TextField(
                 value = email,
@@ -104,7 +103,7 @@ fun SignUpScreen(navController: NavController) {
                 )
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(30.dp))
 
             TextField(
                 value = password,
@@ -119,7 +118,7 @@ fun SignUpScreen(navController: NavController) {
                 )
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             val text = buildAnnotatedString {
                 append("By continuing you agree to our ")
@@ -149,7 +148,7 @@ fun SignUpScreen(navController: NavController) {
                 fontSize = 16.sp
             )
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(60.dp))
 
             Button(
                 onClick = { /* navegar a SelectLocation */ },

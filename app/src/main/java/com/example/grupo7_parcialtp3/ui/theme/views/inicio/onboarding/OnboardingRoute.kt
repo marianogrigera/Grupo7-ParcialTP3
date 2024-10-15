@@ -12,5 +12,6 @@ fun OnboardingRoute(
     navController: NavHostController,
     snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
 ) {
+    // Manejar viewModel aca si es necesario
     WelcomeScreen(navController)
 }

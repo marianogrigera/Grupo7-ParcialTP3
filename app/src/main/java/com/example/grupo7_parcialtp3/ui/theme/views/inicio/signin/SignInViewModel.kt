@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SignInViewModel : ViewModel() {
-
+    // Manejar logica de la view si es necesario
     private val service = RetrofitService.RetrofitServiceFactory.makeRetrofitService()
 
     private val _loginResponse = MutableLiveData<LoginResponse>()
@@ -20,13 +20,21 @@ class SignInViewModel : ViewModel() {
     private val _loginError = MutableLiveData<String>()
     val loginError: LiveData<String> get() = _loginError
 
-    fun login(username: String, password: String) {
+
+    fun login(email: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val loginRequest = LoginRequest(username, password)
-                println(username + "  /  " + password);
-                val response = service.login(loginRequest)
-                _loginResponse.postValue(response)
+                val users = service.getAllUsers()
+                val userFound = users.find{ it.email == email && it.password == password }
+
+
+                if(userFound != null) {
+                    val loginRequest = LoginRequest(userFound.username, userFound.password)
+                    val response = service.login(loginRequest)
+                    _loginResponse.postValue(response)
+                }else {
+                    _loginError.postValue("Credenciales incorrectas")
+                }
 
             } catch (e: Exception) {
                 _loginError.postValue("Error al autenticar: ${e.message}")
@@ -34,3 +42,4 @@ class SignInViewModel : ViewModel() {
         }
     }
 }
+

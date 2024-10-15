@@ -11,6 +11,6 @@ fun SignUpRoute(
     navController: NavHostController,
     snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
 ) {
-    // Aquí podrías usar un ViewModel si necesitas manejar estado
+    // Manejar viewModel aca si es necesario
     SignUpScreen(navController)
 }

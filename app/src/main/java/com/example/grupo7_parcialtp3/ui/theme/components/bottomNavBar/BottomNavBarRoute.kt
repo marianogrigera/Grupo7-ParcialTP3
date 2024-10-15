@@ -9,6 +9,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.grupo7_parcialtp3.AppDestinations
 
 
 @Composable
@@ -20,23 +21,20 @@ fun NavbarRoute(navController: NavHostController) {
                 selectedRoute = viewModel.selectedTab,
                 onItemSelected = { route ->
                     viewModel.onTabSelected(route)
-                    navController.navigate(route)
+                    navController.navigate(route) {
+                        // Evita duplicados de la misma ruta en la pila de navegación
+                        popUpTo(AppDestinations.HOME_ROUTE) { saveState = true }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
                 }
             )
         }
     ) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues)) {
-            NavHost(
-                navController = navController,
-                startDestination = "shop"
-            ) {
-                composable("shop") { navController.navigate("home") }
-                composable("account") { navController.navigate("account") }
-                /*composable("explore") { ExploreScreen() }
-            composable("cart") { CartScreen() }
-            composable("favourite") { FavouriteScreen() }
-            composable("account") { AccountScreen() }*/
-            }
+            // Aquí no necesitas otro NavHost. La navegación ya está gestionada en MainRouteNavGraph
+            // Si necesitas mostrar el contenido específico basado en la ruta actual,
+            // asegúrate de hacerlo en MainRouteNavGraph en lugar de aquí.
         }
     }
 }

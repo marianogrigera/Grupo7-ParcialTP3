@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 
 class SplashViewModel : ViewModel() {
     fun navigateToOnboarding(navController: NavController) {
+        // Manejar logica de la view si es necesario
         viewModelScope.launch {
             delay(3000L)  // Espera 3 segundos
             navController.navigate("onboarding") {

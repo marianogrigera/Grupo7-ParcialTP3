@@ -1,17 +1,14 @@
 package com.example.grupo7_parcialtp3.ui.theme.views.inicio.signin
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.* // Para el espaciado
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.* // Para los controles UI
-import androidx.compose.runtime.* // Para estado mutable
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.Alignment // Para alinear los elementos
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -21,7 +18,6 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -30,7 +26,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.grupo7_parcialtp3.R
-import com.example.grupo7_parcialtp3.ui.theme.views.inicio.onboarding.WelcomeScreen
 import com.example.grupo7_parcialtp3.ui.theme.views.signin.SignInViewModel
 
 
@@ -39,7 +34,7 @@ import com.example.grupo7_parcialtp3.ui.theme.views.signin.SignInViewModel
 fun SignInScreen(
     navController: NavController,
     authViewModel: SignInViewModel = viewModel()
-    ) {
+) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -168,7 +163,7 @@ fun SignInScreen(
 
 
             Button(
-                onClick = { navController.navigate("home")/* Lógica de inicio de sesión aquí */ },
+                onClick = { authViewModel.login(email, password) },
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF53B175))
             ) {
@@ -195,10 +190,13 @@ fun SignInScreen(
             }
         }
     }
+
 }
+
+
 @Preview(showBackground = true)
 @Composable
 fun SignInScreen() {
-    val navController = rememberNavController() // Crear NavController para vista previa
+    val navController = rememberNavController()
     SignInScreen(navController)
 }

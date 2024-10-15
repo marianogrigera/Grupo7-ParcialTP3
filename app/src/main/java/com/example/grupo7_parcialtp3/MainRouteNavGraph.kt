@@ -5,10 +5,22 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.grupo7_parcialtp3.navigation.AccountRoute
+import com.example.grupo7_parcialtp3.navigation.CategoriesRoute
+import com.example.grupo7_parcialtp3.navigation.CheckoutRoute
+import com.example.grupo7_parcialtp3.navigation.ErrorRoute
+import com.example.grupo7_parcialtp3.navigation.ExploreRoute
+import com.example.grupo7_parcialtp3.navigation.FavouriteRoute
+import com.example.grupo7_parcialtp3.navigation.FilterRoute
 import com.example.grupo7_parcialtp3.navigation.HomeViewRoute
+import com.example.grupo7_parcialtp3.navigation.MyCartRoute
 import com.example.grupo7_parcialtp3.navigation.OnboardingRoute
+import com.example.grupo7_parcialtp3.navigation.OrderAccRoute
+import com.example.grupo7_parcialtp3.navigation.ProductDetailRoute
+import com.example.grupo7_parcialtp3.navigation.SearchRoute
 import com.example.grupo7_parcialtp3.navigation.SignInRoute
 import com.example.grupo7_parcialtp3.navigation.SignUpRoute
+import com.example.grupo7_parcialtp3.ui.theme.components.bottomNavBar.NavbarRoute
+import com.example.grupo7_parcialtp3.ui.theme.views.inicio.location.SelectLocationRoute
 import com.example.grupo7_parcialtp3.ui.theme.views.inicio.splash.SplashScreen
 
 
@@ -25,16 +37,17 @@ fun MainRouteNavGraph(
         composable(AppDestinations.SIGNUP_ROUTE) { SignUpRoute(navController) }
         composable(AppDestinations.HOME_ROUTE) { HomeViewRoute(navController) }
         composable(AppDestinations.ACCOUNT_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.DETAIL_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.CATEGORIES_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.CHECKOUT_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.ERROR_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.EXPLORE_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.FILTER_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.FAVOURITES_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.SEARCH_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.MYCART_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.ORDERACCEPTED_ROUTE) { AccountRoute(navController) }
-        composable(AppDestinations.PRODUCTDETAIL_ROUTE) { AccountRoute(navController) }
+        composable(AppDestinations.DETAIL_ROUTE) { ProductDetailRoute(navController) }
+        composable(AppDestinations.CATEGORIES_ROUTE) { CategoriesRoute(navController) }
+        composable(AppDestinations.CHECKOUT_ROUTE) { CheckoutRoute(navController) }
+        composable(AppDestinations.ERROR_ROUTE) { ErrorRoute(navController) }
+        composable(AppDestinations.EXPLORE_ROUTE) { ExploreRoute(navController) }
+        composable(AppDestinations.FILTER_ROUTE) { FilterRoute(navController) }
+        composable(AppDestinations.FAVOURITES_ROUTE) { FavouriteRoute(navController) }
+        composable(AppDestinations.SEARCH_ROUTE) { SearchRoute(navController) }
+        composable(AppDestinations.MYCART_ROUTE) { MyCartRoute(navController) }
+        composable(AppDestinations.ORDERACCEPTED_ROUTE) { OrderAccRoute(navController) }
+        composable(AppDestinations.PRODUCTDETAIL_ROUTE) { ProductDetailRoute(navController) }
+        composable(AppDestinations.LOCATION_ROUTE) { SelectLocationRoute(navController) }
     }
 }

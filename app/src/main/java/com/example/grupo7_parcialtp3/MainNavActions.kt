@@ -21,6 +21,7 @@ object AppDestinations {
     const val MYCART_ROUTE = "mycart"
     const val ORDERACCEPTED_ROUTE = "orderaccepted"
     const val PRODUCTDETAIL_ROUTE = "productdetail"
+    const val LOCATION_ROUTE = "location"
 
 }
 
@@ -90,5 +91,9 @@ class MainNavActions(
 
     val navigateToProductDetail: () -> Unit = {
         navController.navigate(AppDestinations.PRODUCTDETAIL_ROUTE)
+    }
+
+    val navigateToLocation: () -> Unit = {
+        navController.navigate(AppDestinations.LOCATION_ROUTE)
     }
 }
