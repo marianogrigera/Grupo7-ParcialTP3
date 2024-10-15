@@ -35,7 +35,7 @@ fun SignInScreen(
     navController: NavController,
     authViewModel: SignInViewModel = viewModel()
     ) {
-    var email by remember { mutableStateOf("") }
+    var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
     val loginResponse by authViewModel.loginResponse.observeAsState()
@@ -77,9 +77,9 @@ fun SignInScreen(
         ) {
 
             TextField(
-                value = email,
-                onValueChange = { email = it },
-                label = { Text("Email") },
+                value = username,
+                onValueChange = { username = it },
+                label = { Text("username") },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -108,7 +108,7 @@ fun SignInScreen(
 
            
             Button(
-                onClick = {authViewModel.login(email,password)},
+                onClick = {authViewModel.login(username,password)},
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF53B175))
             ) {
