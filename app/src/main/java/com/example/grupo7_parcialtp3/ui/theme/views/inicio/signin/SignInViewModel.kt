@@ -20,12 +20,20 @@ class SignInViewModel : ViewModel() {
     private val _loginError = MutableLiveData<String>()
     val loginError: LiveData<String> get() = _loginError
 
-    fun login(username: String, password: String) {
+    fun login(email: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val loginRequest = LoginRequest(username, password)
-                val response = service.login(loginRequest)
-                _loginResponse.postValue(response)
+                val users = service.getAllUsers()
+                val user = users.find{ it.email == email && it.password == password }
+
+                if(user != null){
+                    val loginRequest = LoginRequest(email, password)
+                    val response = service.login(loginRequest)
+                    _loginResponse.postValue(response)
+                }else {
+                    _loginError.postValue("Credenciales incorrectas")
+                }
+
 
             } catch (e: Exception) {
                 _loginError.postValue("Error al autenticar: ${e.message}")

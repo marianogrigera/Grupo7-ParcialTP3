@@ -6,6 +6,7 @@ import com.example.grupo7_parcialtp3.ui.theme.data.model.LoginResponse
 import com.example.grupo7_parcialtp3.ui.theme.data.model.Product
 import com.example.grupo7_parcialtp3.ui.theme.data.model.Products
 import com.example.grupo7_parcialtp3.ui.theme.data.model.Users
+import com.example.grupo7_parcialtp3.ui.theme.data.model.UsersItem
 import com.google.android.gms.common.api.Response
 import com.google.firebase.firestore.auth.User
 import retrofit2.Retrofit
@@ -75,10 +76,10 @@ object RetrofitServiceFactory{
     suspend fun login(@Body loginRequest: LoginRequest): LoginResponse
 
     // Servicios para Users (Usuarios)
-    /*
-    @GET("users")
-    suspend fun getAllUsers(): List<Users>
 
+    @GET("users")
+    suspend fun getAllUsers(): List<UsersItem>
+    /*
     @GET("users/{id}")
     suspend fun getOneUser(@Path("id") id: Int): User
 
