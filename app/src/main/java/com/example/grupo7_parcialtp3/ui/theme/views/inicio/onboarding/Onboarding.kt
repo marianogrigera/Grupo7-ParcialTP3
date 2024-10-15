@@ -1,19 +1,20 @@
 package com.example.grupo7_parcialtp3.ui.theme.views.inicio.onboarding
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.* // Para manejar el espaciado
-import androidx.compose.material3.* // Para el botón y el tema
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment // Para alinear elementos
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color // Para el color
-import androidx.compose.ui.res.painterResource // Para cargar la imagen
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController // Agregar esta línea
+import androidx.navigation.compose.rememberNavController
 import com.example.grupo7_parcialtp3.R
 
 
@@ -22,30 +23,26 @@ fun WelcomeScreen(navController: NavController) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        // Imagen de fondo
         Image(
             painter = painterResource(id = R.drawable.appnuestra2),
             contentDescription = "Background Image",
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop
         )
 
-        // Contenido centrado
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .padding(0.dp)
         ) {
-
-
             Spacer(modifier = Modifier.height(380.dp))
 
             Image(
                 modifier = Modifier.size(width = 48.5.dp, height = 56.dp),
                 painter = painterResource(id = R.drawable.nuestraapp3),
                 contentDescription = "Logo Image"
-
             )
 
             Spacer(modifier = Modifier.height(40.dp))
@@ -86,6 +83,7 @@ fun WelcomeScreen(navController: NavController) {
         }
     }
 }
+
 
 
 @Preview(showBackground = true)

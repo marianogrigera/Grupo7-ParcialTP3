@@ -151,7 +151,7 @@ fun SignUpScreen(navController: NavController) {
             Spacer(modifier = Modifier.height(60.dp))
 
             Button(
-                onClick = { /* navegar a SelectLocation */ },
+                onClick = { navController.navigate("location") },
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF53B175))
             ) {
