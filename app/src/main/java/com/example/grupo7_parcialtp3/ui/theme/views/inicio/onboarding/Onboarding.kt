@@ -36,37 +36,52 @@ fun WelcomeScreen(navController: NavController) {
         // Contenido centrado
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Bottom,
+            verticalArrangement = Arrangement.Center,
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
+
+
+            Spacer(modifier = Modifier.height(380.dp))
+
             Image(
+                modifier = Modifier.size(width = 48.5.dp, height = 56.dp),
                 painter = painterResource(id = R.drawable.nuestraapp3),
                 contentDescription = "Logo Image"
+
             )
+
+            Spacer(modifier = Modifier.height(40.dp))
+
             Text(
                 text = "Welcome",
-                fontSize = 35.sp,
+                fontSize = 38.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
             Text(
                 text = "to our store",
-                fontSize = 35.sp,
+                fontSize = 38.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
+
+            Spacer(modifier = Modifier.height(6.dp))
+
             Text(
                 text = "Get your groceries in as fast as one hour",
                 fontSize = 15.sp,
                 color = Color.White
             )
 
-            Spacer(modifier = Modifier.height(34.dp))
+            Spacer(modifier = Modifier.height(45.dp))
 
             Button(
-                modifier = Modifier.padding(horizontal = 50.dp),
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 onClick = { navController.navigate("signIn") },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF53B175))
             ) {
@@ -80,7 +95,7 @@ fun WelcomeScreen(navController: NavController) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewWelcomeScreen() {
-    val navController = rememberNavController() // Crear NavController para vista previa
+    val navController = rememberNavController()
     WelcomeScreen(navController)
 }
 

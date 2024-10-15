@@ -9,7 +9,7 @@ import com.example.grupo7_parcialtp3.ui.theme.data.model.Product
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SignUpViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 
     /*
     private val service = RetrofitService.RetrofitServiceFactory.makeRetrofitService()

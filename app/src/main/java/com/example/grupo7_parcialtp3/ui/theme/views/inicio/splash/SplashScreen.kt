@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -24,7 +25,7 @@ import com.example.grupo7_parcialtp3.R
 @Composable
 fun SplashScreen(navController: NavController) {
     val viewModel = remember { SplashViewModel() }
-    viewModel.navigateToOnboarding(navController) // Inicia la navegación
+    viewModel.navigateToOnboarding(navController)
 
     SplashScreenContent(navController)
 }
@@ -42,22 +43,18 @@ fun SplashScreenContent(navController: NavController) {
         ) {
             Image(
                 painter = painterResource(id = R.drawable.ic_nectar),
-                contentDescription = "Logo"
+                contentDescription = "Logo",
+                modifier = Modifier.size(width = 267.5.dp, height = 68.5.dp)
             )
-            Text(
-                text = "",
-                color = Color.White,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(start = 38.dp)
-            )
+
         }
     }
+
 }
 
 @Preview(showBackground = true)
 @Composable
 fun SplashScreenContent() {
-    val navController = rememberNavController() // Crear NavController para vista previa
+    val navController = rememberNavController()
     SplashScreenContent(navController)
 }

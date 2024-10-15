@@ -24,6 +24,7 @@ class SignInViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val loginRequest = LoginRequest(username, password)
+                println(username + "  /  " + password);
                 val response = service.login(loginRequest)
                 _loginResponse.postValue(response)
 
