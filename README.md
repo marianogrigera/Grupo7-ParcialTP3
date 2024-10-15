@@ -21,4 +21,4 @@ Retrofit: Biblioteca utilizada para hacer las solicitudes HTTP a la FakeStore AP
 FakeStore API: Proporciona los datos de productos y usuarios necesarios para simular la experiencia de un ecommerce.
 Figma: Herramienta de diseño utilizada por Nectar para proporcionar la interfaz visual y los recursos necesarios para el desarrollo de la app.
 
-Grupo de trabajo: Owen Donnenfeld, AGREGAR SUS NOMBRES
+Grupo de trabajo: Owen Donnenfeld, Sebastian GARCIA, Nahuel ACUÑA, Sebastian GELABERT, Mariano GRIGERA, Matias RON
