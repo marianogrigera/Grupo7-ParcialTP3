@@ -18,6 +18,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -35,6 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -67,24 +69,45 @@ fun MyCartScreen(navController: NavController) {
                 .background(Color.White)
                 .padding(paddingValues)
         ) {
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(horizontal = 16.dp),
             ) {
-                Text(
-                    text = "My Cart",
-                    style = MaterialTheme.typography.titleLarge,
-                    modifier = Modifier.padding(vertical = 16.dp)
-                )
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0xFFFCFCFC))
+                        .padding(top = 20.dp),
+                    verticalAlignment = Alignment.CenterVertically // Alineación vertical centrada
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_barsmenu),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(30.dp) // Espacio entre la imagen y el texto
+                    )
+
+                    Text(
+                        text = "My Cart",
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                        modifier = Modifier
+                            .padding(vertical = 16.dp)
+                            .fillMaxWidth()// Puedes ajustar el padding aquí si es necesario
+                    )
+                }
+                Spacer(modifier = Modifier.height(45.dp))
                 LazyColumn(
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                     modifier = Modifier.weight(1f)
                 ) {
-                    item { CartItem("Bell Pepper Red", "1kg", "$4.99", R.drawable.banana) }
-                    item { CartItem("Egg Chicken Red", "4pcs", "$1.99", R.drawable.manzana) }
+                    item { CartItem("Bell Pepper Red", "1kg", "$4.99", R.drawable.ic_pepper) }
+                    item { CartItem("Egg Chicken Red", "4pcs", "$1.99", R.drawable.ic_eggs) }
                     item { CartItem("Organic Bananas", "12kg", "$3.00", R.drawable.banana) }
-                    item { CartItem("Ginger", "250gm", "$2.99", R.drawable.manzana) }
+                    item { CartItem("Ginger", "250gm", "$2.99", R.drawable.ic_ginger) }
                 }
                 Spacer(modifier = Modifier.height(16.dp))
                 CheckoutButton(navController= navController, totalPrice = "$12.96")
@@ -148,7 +171,8 @@ fun CheckoutButton(totalPrice: String, navController: NavController) {
         onClick = { navController.navigate("checkout")},
         modifier = Modifier
             .fillMaxWidth()
-            .height(50.dp)
+            .height(50.dp) ,
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF53B175))
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -156,6 +180,7 @@ fun CheckoutButton(totalPrice: String, navController: NavController) {
         ) {
             Text(text = "Go to Checkout", fontSize = 18.sp)
             Text(text = totalPrice, fontSize = 18.sp)
+
         }
     }
 }
