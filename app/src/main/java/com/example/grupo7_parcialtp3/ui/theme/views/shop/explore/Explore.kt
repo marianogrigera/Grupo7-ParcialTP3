@@ -64,25 +64,24 @@ fun ExploreScreen(navController: NavController) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFFCFCFC))
-                        .padding(top = 20.dp),
-                    verticalAlignment = Alignment.CenterVertically // Alineación vertical centrada
+                        .background(Color(0xFFFCFCFC)),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.ic_barsmenu),
                         contentDescription = null,
                         modifier = Modifier
-                            .size(30.dp) // Espacio entre la imagen y el texto
+                            .size(30.dp)
                     )
 
                     Text(
-                        text = "Find products",
+                        text = "Explore",
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = androidx.compose.ui.text.style.TextAlign.Center,
                         modifier = Modifier
                             .padding(vertical = 16.dp)
-                            .fillMaxWidth()// Puedes ajustar el padding aquí si es necesario
+                            .fillMaxWidth()
                     )
                 }
 
