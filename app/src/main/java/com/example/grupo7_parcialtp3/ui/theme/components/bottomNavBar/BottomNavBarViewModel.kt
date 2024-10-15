@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
 class NavbarViewModel : ViewModel() {
-    var selectedTab by mutableStateOf("shop")
+    var selectedTab by mutableStateOf("home")
         private set
 
     fun onTabSelected(route: String) {

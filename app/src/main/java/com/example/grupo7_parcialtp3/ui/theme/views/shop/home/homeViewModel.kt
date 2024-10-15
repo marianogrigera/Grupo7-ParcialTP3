@@ -1,15 +1,9 @@
 package com.example.grupo7_parcialtp3.ui.theme.views.shop.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.grupo7_parcialtp3.ui.theme.data.RetrofitService
-import com.example.grupo7_parcialtp3.ui.theme.data.model.Product
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
+    // Manejar logica de la view si es necesario
 
     /*
     private val service = RetrofitService.RetrofitServiceFactory.makeRetrofitService()

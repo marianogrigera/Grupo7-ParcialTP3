@@ -11,6 +11,7 @@ fun SplashRoute(
     navController: NavHostController,
     snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
 ) {
+    // Manejar viewModel aca si es necesario
     // Inicia la navegación al onboarding
     splashViewModel.navigateToOnboarding(navController)
 

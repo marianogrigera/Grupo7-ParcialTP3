@@ -28,81 +28,101 @@ fun AccountSettingsScreen(navController: NavController) {
     val textColor = if (isDarkMode) Color.White else Color.Black
     val dividerColor = if (isDarkMode) Color.Gray else Color.LightGray
 
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-            .background(backgroundColor),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = "Account",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier
-                .padding(bottom = 24.dp),
-            color = textColor
-        )
-
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 8.dp)
-        ) {
-
-            AccountTextSection("Orders", textColor, R.drawable.shop)
-            Divider(color = dividerColor, thickness = 1.dp)
+    var selectedRoute by remember { mutableStateOf("account") }
 
 
-            AccountTextSection("Delivery Address", textColor, R.drawable.ubicacion)
-            Divider(color = dividerColor, thickness = 1.dp)
-
-
-            AccountTextSection("Payment Methods", textColor, R.drawable.credit)
-            Divider(color = dividerColor, thickness = 1.dp)
-
-
-            AccountTextSection("Promo Card", textColor, R.drawable.ticket)
-            Divider(color = dividerColor, thickness = 1.dp)
-
-
-            AccountTextSection("Notifications", textColor, R.drawable.campana)
-            Divider(color = dividerColor, thickness = 1.dp)
-
-            Spacer(modifier = Modifier.height(40.dp))
-
-
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center,
-                modifier = Modifier.fillMaxWidth() // Llenar el ancho para centrar
+    Scaffold(
+        bottomBar = {
+            BottomNavbar(
+                selectedRoute = "account",
+                onItemSelected = { route ->
+                    selectedRoute = route
+                    navController.navigate(route) {
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                }
+            )
+        }
+    ) { paddingValues ->
+        Box(modifier = Modifier.padding(paddingValues)) {
+            // Completar aca la vista
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+                    .background(backgroundColor),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Dark Mode",
-                    fontSize = 16.sp,
-                    color = textColor,
-                    modifier = Modifier.padding(end = 8.dp)
+                    text = "Account",
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .padding(bottom = 24.dp),
+                    color = textColor
                 )
-                Switch(
-                    checked = isDarkMode,
-                    onCheckedChange = { isDarkMode = it },
-                    colors = SwitchDefaults.colors(
-                        checkedThumbColor = Color(0xFF53B175),
-                        uncheckedThumbColor = Color.Gray
-                    )
-                )
-            }
 
-            Spacer(modifier = Modifier.height(40.dp))
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 8.dp)
+                ) {
+
+                    AccountTextSection("Orders", textColor, R.drawable.shop)
+                    Divider(color = dividerColor, thickness = 1.dp)
 
 
-            Button(
-                onClick = { /* Acción de cerrar sesión */ },
-                modifier = Modifier.fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF2F3F2))
-            ) {
-                Text(text = "Log Out", fontSize = 20.sp, color = Color(0xFF53B175))
+                    AccountTextSection("Delivery Address", textColor, R.drawable.ubicacion)
+                    Divider(color = dividerColor, thickness = 1.dp)
+
+
+                    AccountTextSection("Payment Methods", textColor, R.drawable.credit)
+                    Divider(color = dividerColor, thickness = 1.dp)
+
+
+                    AccountTextSection("Promo Card", textColor, R.drawable.ticket)
+                    Divider(color = dividerColor, thickness = 1.dp)
+
+
+                    AccountTextSection("Notifications", textColor, R.drawable.campana)
+                    Divider(color = dividerColor, thickness = 1.dp)
+
+                    Spacer(modifier = Modifier.height(40.dp))
+
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center,
+                        modifier = Modifier.fillMaxWidth() // Llenar el ancho para centrar
+                    ) {
+                        Text(
+                            text = "Dark Mode",
+                            fontSize = 16.sp,
+                            color = textColor,
+                            modifier = Modifier.padding(end = 8.dp)
+                        )
+                        Switch(
+                            checked = isDarkMode,
+                            onCheckedChange = { isDarkMode = it },
+                            colors = SwitchDefaults.colors(
+                                checkedThumbColor = Color(0xFF53B175),
+                                uncheckedThumbColor = Color.Gray
+                            )
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(40.dp))
+
+
+                    Button(
+                        onClick = { /* Acción de cerrar sesión */ },
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF2F3F2))
+                    ) {
+                        Text(text = "Log Out", fontSize = 20.sp, color = Color(0xFF53B175))
+                    }
+                }
             }
         }
     }

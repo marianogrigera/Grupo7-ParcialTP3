@@ -1,8 +1,5 @@
 package com.example.grupo7_parcialtp3.ui.theme.views.inicio.onboarding
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.* // Para manejar el espaciado
 import androidx.compose.material3.* // Para el botón y el tema
@@ -10,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment // Para alinear elementos
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color // Para el color
-import androidx.compose.ui.layout.ContentScale // Para ajustar la imagen
 import androidx.compose.ui.res.painterResource // Para cargar la imagen
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp

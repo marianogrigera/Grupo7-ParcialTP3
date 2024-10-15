@@ -34,7 +34,7 @@ import com.example.grupo7_parcialtp3.ui.theme.views.signin.SignInViewModel
 fun SignInScreen(
     navController: NavController,
     authViewModel: SignInViewModel = viewModel()
-    ) {
+) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -162,7 +162,7 @@ fun SignInScreen(
 
 
             Button(
-                onClick = { navController.navigate("home")/* Lógica de inicio de sesión aquí */ },
+                onClick = { authViewModel.login(email, password) },
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF53B175))
             ) {
@@ -189,10 +189,13 @@ fun SignInScreen(
             }
         }
     }
+
 }
+
+
 @Preview(showBackground = true)
 @Composable
 fun SignInScreen() {
-    val navController = rememberNavController() // Crear NavController para vista previa
+    val navController = rememberNavController()
     SignInScreen(navController)
 }

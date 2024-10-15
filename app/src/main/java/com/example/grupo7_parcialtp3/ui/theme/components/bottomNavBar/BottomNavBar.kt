@@ -47,9 +47,9 @@ fun BottomNavbar(
         ) {
             NavigationBarItem(
                 icon = { Icon(imageVector = ImageVector.vectorResource(id = R.drawable.ic_shop), contentDescription = "Shop") },
-                label = { Text("Shop", color = if (selectedRoute == "shop") Color(0xFF53B175) else Color.Black) },
-                selected = selectedRoute == "shop",
-                onClick = { onItemSelected("shop") },
+                label = { Text("Shop", color = if (selectedRoute == "home") Color(0xFF53B175) else Color.Black) },
+                selected = selectedRoute == "home",
+                onClick = { onItemSelected("home") },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = Color(0xFF53B175),
                     unselectedIconColor = Color.Black,
@@ -73,9 +73,9 @@ fun BottomNavbar(
             )
             NavigationBarItem(
                 icon = { Icon(imageVector = ImageVector.vectorResource(id = R.drawable.ic_cart), contentDescription = "Cart") },
-                label = { Text("Cart", color = if (selectedRoute == "cart") Color(0xFF53B175) else Color.Black) },
-                selected = selectedRoute == "cart",
-                onClick = { onItemSelected("cart") },
+                label = { Text("Cart", color = if (selectedRoute == "mycart") Color(0xFF53B175) else Color.Black) },
+                selected = selectedRoute == "mycart",
+                onClick = { onItemSelected("mycart") },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = Color(0xFF53B175),
                     unselectedIconColor = Color.Black,
@@ -86,9 +86,9 @@ fun BottomNavbar(
             )
             NavigationBarItem(
                 icon = { Icon(imageVector = ImageVector.vectorResource(id = R.drawable.ic_favourite), contentDescription = "Favourite") },
-                label = { Text("Favourite", color = if (selectedRoute == "favourite") Color(0xFF53B175) else Color.Black) },
-                selected = selectedRoute == "favourite",
-                onClick = { onItemSelected("favourite") },
+                label = { Text("Favourite", color = if (selectedRoute == "favourites") Color(0xFF53B175) else Color.Black) },
+                selected = selectedRoute == "favourites",
+                onClick = { onItemSelected("favourites") },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = Color(0xFF53B175),
                     unselectedIconColor = Color.Black,
@@ -112,7 +112,6 @@ fun BottomNavbar(
             )
         }
     }
-
 }
 
 @Preview(showBackground = true)

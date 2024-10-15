@@ -1,8 +1,5 @@
 package com.example.grupo7_parcialtp3.ui.theme.capas.selectlocation
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -160,7 +157,7 @@ fun SelectLocationScreen(navController: NavController) {
                 }
 
                 Button(
-                    onClick = { /* Lógica de inicio de sesión aquí */ },
+                    onClick = { /* Lógica de inicio de sesión */ },
                     modifier = Modifier
                         .offset(x = 0.dp, y = 200.dp)
                         .fillMaxWidth().padding(horizontal = 16.dp),
