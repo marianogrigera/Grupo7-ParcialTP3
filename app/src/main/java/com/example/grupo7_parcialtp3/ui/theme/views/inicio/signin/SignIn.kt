@@ -50,7 +50,6 @@ fun SignInScreen(
     val signUpText = buildAnnotatedString {
         append("Don't have an account? ")
 
-        // Estilo del texto "Sign Up" como un botón
         withStyle(style = SpanStyle(Color(0xFF53B175), fontWeight = FontWeight.Bold)) {
             append("Sign Up")
         }
